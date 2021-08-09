@@ -1,5 +1,6 @@
 """There is XKomResponse object which contains specify attribute for working."""
-from models.producer import Producer
+
+from models.producer import producer_decoder
 
 
 class XKomResponse:
@@ -9,5 +10,5 @@ class XKomResponse:
         self.json = response.json()
         self.name = self.json.get("Name")
         self.price = self.json.get("Price")
-        self.producer = Producer(self.json.get("Producer"))
+        self.producer = producer_decoder(self.json.get("Producer"))
         self.web_url = self.json.get("WebUrl")
