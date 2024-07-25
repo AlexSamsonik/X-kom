@@ -13,6 +13,14 @@ repos:
     rev: v0.13.0
     hooks:
       - id: yamlfmt
+  - repo: https://github.com/executablebooks/mdformat
+    rev: 0.7.17
+    hooks:
+      - id: mdformat
+        # Optionally add plugins
+        additional_dependencies:
+          - mdformat-gfm
+          - mdformat-black
   - repo: local
     hooks:
       - id: isort
