@@ -1,5 +1,18 @@
----
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+      - id: name-tests-test
+        args: [--pytest-test-first]
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/google/yamlfmt
+    rev: v0.13.0
+    hooks:
+      - id: yamlfmt
   - repo: local
     hooks:
       - id: isort
@@ -9,7 +22,6 @@ repos:
         types: [python]
         args: [--profile, black]
         require_serial: true
-
       - id: black
         name: black
         entry: black
@@ -17,14 +29,12 @@ repos:
         types: [python]
         require_serial: true
         args: [--line-length=120]
-
       - id: bandit
         name: bandit
         entry: bandit
         language: system
         types: [python]
         require_serial: true
-
       - id: flake8
         name: flake8
         entry: flake8
@@ -32,7 +42,6 @@ repos:
         types: [python]
         require_serial: true
         args: [--max-line-length=120]
-
       - id: docformatter
         name: docformatter
         entry: docformatter
@@ -40,7 +49,6 @@ repos:
         types: [python]
         require_serial: true
         args: [--in-place, --wrap-summaries=88, --wrap-descriptions=88]
-
       - id: pylint
         name: pylint
         entry: pylint
@@ -48,9 +56,8 @@ repos:
         types: [python]
         require_serial: true
         args: [--max-line-length=120]
-
       - id: yamllint
         name: yamllint
         entry: yamllint
         language: system
-        types: [yaml]
+        types: [file, yaml]
