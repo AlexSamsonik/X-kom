@@ -1,48 +1,76 @@
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+      - id: check-toml
+      - id: name-tests-test
+        args: [--pytest-test-first]
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/google/yamlfmt
+    rev: v0.13.0
+    hooks:
+      - id: yamlfmt
+  - repo: https://github.com/abravalheri/validate-pyproject
+    rev: v0.18
+    hooks:
+      - id: validate-pyproject
+  - repo: https://github.com/executablebooks/mdformat
+    rev: 0.7.17
+    hooks:
+      - id: mdformat
+        # Optionally add plugins
+        additional_dependencies:
+          - mdformat-gfm
+          - mdformat-black
   - repo: local
     hooks:
       - id: isort
         name: isort
         entry: isort
         language: system
-        types: [ python ]
-        args: [ "--profile", "black" ]
+        types: [python]
+        args: [--profile, black]
         require_serial: true
-
       - id: black
         name: black
         entry: black
         language: system
-        types: [ python ]
+        types: [python]
         require_serial: true
-        args: [ --line-length=120 ]
-
+        args: [--line-length=120]
       - id: bandit
         name: bandit
         entry: bandit
         language: system
-        types: [ python ]
+        types: [python]
         require_serial: true
-
       - id: flake8
         name: flake8
         entry: flake8
         language: system
-        types: [ python ]
+        types: [python]
         require_serial: true
-        args: [ --max-line-length=120 ]
-
+        args: [--max-line-length=120]
       - id: docformatter
         name: docformatter
         entry: docformatter
         language: system
-        types: [ python ]
+        types: [python]
         require_serial: true
-
+        args: [--in-place, --wrap-summaries=88, --wrap-descriptions=88]
       - id: pylint
         name: pylint
         entry: pylint
         language: system
-        types: [ python ]
+        types: [python]
         require_serial: true
-        args: [ --max-line-length=120 ]
+        args: [--max-line-length=120]
+      - id: yamllint
+        name: yamllint
+        entry: yamllint
+        language: system
+        types: [file, yaml]

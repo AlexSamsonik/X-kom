@@ -2,6 +2,8 @@
 
 from models.producer import producer_decoder
 
+# pylint: disable=R0903
+
 
 class XKomResponse:
     """Wrapper on response."""

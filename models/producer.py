@@ -1,5 +1,8 @@
 """There is Producer object which can get in GET request."""
+
 from typing import Dict
+
+# pylint: disable=R0903
 
 
 def producer_decoder(json_dict: Dict[str, str]):
