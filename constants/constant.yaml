@@ -1,7 +1,8 @@
---- !Constant
-url: "https://mobileapi.x-kom.pl/api/v1/xkom/products"
-x_api_key: "sJSgnQXySmp6pqNV"
+---
+!Constant
+url: https://mobileapi.x-kom.pl/api/v1/xkom/products
+x_api_key: sJSgnQXySmp6pqNV
 user_agents:
-  - "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
-  - "Chrome/86.0.4240.198"
-  - "Safari/537.36"
+  - Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+  - Chrome/86.0.4240.198
+  - Safari/537.36
