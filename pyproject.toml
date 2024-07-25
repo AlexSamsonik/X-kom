@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "x-kom"
+version = "0.2.0"
+description = "Get detailed information about item in internet-shop www.x-kom.pl"
+authors = ["Aliaksandr Samsonik"]
+readme = "README.md"
+package-mode = false
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.3"
+pyyaml = "^6.0.1"
