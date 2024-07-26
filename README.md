@@ -9,31 +9,31 @@ How to use on LINUX/MAC:
 - Clone the repository;
 - Install Virtual Environment (venv):
 
-```bash
+```sh
 python -m venv venv
 ```
 
 - Activate venv:
 
-```bash
+```sh
 source venv/bin/activate
 ```
 
 - Install poetry
 
-```bash
+```sh
 pip install poetry
 ```
 
 - Install dependencies via poetry
 
-```bash
+```sh
 poetry install
 ```
 
 - Run main.py:
 
-```bash
+```sh
 python main.py -k x-kom-kod
 ```
 
